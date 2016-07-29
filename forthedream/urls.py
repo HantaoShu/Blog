@@ -19,5 +19,6 @@ from blog import views as blog_view
 urlpatterns = [
     url(r'^blog/spec/\d+/',blog_view.spec),
     url(r'^blog/$',blog_view.index),
+    url(r'^tem/$',blog_view.tem),
     url(r'^admin/', admin.site.urls),
 ]

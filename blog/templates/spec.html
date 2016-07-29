@@ -1,73 +1,133 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="shuhantao">
+
     <title>forthedream</title>
 
-    <!-- Bootstrap -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Fonts -->
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/color/default.css" rel="stylesheet">
+
   </head>
-  <body>
-    <nav class="navbar navbar-inverse" role=“navigation">
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="load"></div>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/blog">Forthedream.com.cn</a>
-          <a class="navbar-text" href="#">Home</a>
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/blog">
+            <h1>forthedream.com.cn</h1>
+          </a>
         </div>
-        <div class="navbar-right">
-          <p class="navbar-text">made by sht</p>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/blog">Home</a></li>
+            <li><a href="#contact">made by sht</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">blog <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">我的笔记</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-        <div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
     </nav>
-    <div class="jumbotron">
+
+    <!-- Section: intro -->
+    <section id="intro" class="intro">
+
+      <div class="slogan">
+        <h2>for the dream <span class="text_color">from today</span> </h2>
+        <div class="text-right">
+          <h4>Idleness is the root of all evil. </h4>
+        </div>
+      </div>
+      <div class="page-scroll">
+        <a href="#service" class="btn btn-circle">
+          <i class="fa fa-angle-double-down animated"></i>
+        </a>
+      </div>
+    </section>
+    <!-- /Section: intro -->
+
+    <section id="about" class="home-section text-left">
+      <div class="heading-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="wow bounceInDown" data-wow-delay="0.4s">
+                <div class="section-heading">
+                  <i class="fa fa-2x fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
-        <h1 name="top">forthedream</h1>
-        <p>
-        一个个人博客,记录所学所做
-        </p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-11">
-          <h2>{{ spec.title }}</h2>
-          <p>{{ spec.id }}</p>
-          <h3>{{ spec.abstract }}
-          <hr>
-          {% autoescape off %}
-          {{ spec.maintain }}
-          {% endautoescape %}
-          <hr>
-        </div>
-        <div class="col-md-1">
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
-            <ul class="nav bs-docs-sidenav">
-              {% for item in blog_list %}
-              <li class=""> 
-                <a href="#">{{ item.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-              <a class="back-to-top" href="#top">
-                返回顶部
-              </a>
-          </nav>
+        <div class="row">
+          <div class="col-md-11">
+            <div class="wow bounceInUp" data-wow-delay="0.2s">
+              <h2>{{ spec.title }}</h2>
+              <p>{{ spec.id }}</p>
+              <h3>{{ spec.abstract }}
+                <hr>
+                {% autoescape off %}
+                {{ spec.maintain }}
+                {% endautoescape %}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <div class="wow shake" data-wow-delay="0.4s">
+              <div class="page-scroll marginbot-30">
+                <a href="#intro" id="totop" class="btn btn-circle">
+                  <i class="fa fa-angle-double-up animated"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>	
+      </div>
+    </footer>
+
+    <!-- Core JavaScript Files -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.easing.min.js"></script>	
+    <script src="/static/js/jquery.scrollTo.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/custom.js"></script>
+
   </body>
+
 </html>

@@ -18,3 +18,6 @@ def spec(request):
     bid = str(re.search(r'/\d+',path).group(0))[1:]
     spec_blog = BlogsPost.objects.all()[1]
     return render_to_response('spec.html',{'spec':spec_blog,'blog_list':blog_list,'path':path,"bid":bid})
+
+def tem(request):
+    return render_to_response('tem.html')
