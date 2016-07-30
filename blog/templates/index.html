@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
   <head>
     <meta charset="utf-8">
@@ -32,7 +32,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="/blog">
+          <a class="navbar-brand" href="#">
             <h1>forthedream.com.cn</h1>
           </a>
         </div>
@@ -40,7 +40,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/blog">Home</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li><a href="#contact">made by sht</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">blog <b class="caret"></b></a>
@@ -79,7 +79,7 @@
             <div class="col-lg-8">
               <div class="wow bounceInDown" data-wow-delay="0.4s">
                 <div class="section-heading">
-                  <h2>最近笔记</h2>
+                  <h2>学习笔记</h2>
                   <i class="fa fa-2x fa-angle-down"></i>
                 </div>
               </div>
@@ -89,13 +89,14 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-11">
+          <div class="col-md-10">
             <div class="wow bounceInUp" data-wow-delay="0.2s">
               {% for item in blog_list %}
               <h2>{{ item.title }}</h2>
               <hr>
               {% autoescape off %}
-              {{ item.maintain }}
+              <h3>{{ item.abstract }}</h3>
+              <h4 class="text-right">{{ item.timestamp }}</h4>
               {% endautoescape %}
               <br/>
               <a class="btn btn-default" href="spec/{{ item.id }}/" role="button">View details »</a>
@@ -103,11 +104,11 @@
               {% endfor %}
             </div>
           </div>
-          <div class="col-md-1">
-            <nav class="nav navbar-nav nav-divider">
+          <div class="col-md-2">
+            <nav class="nav navbar-nav nav-divider tocify">
               <ul class="nav bs-docs-sidenav">
                 {% for item in blog_list %}
-                <li class=""> 
+                <li class="tocify-header"> 
                   <a href="spec/{{ item.id }}">{{ item.title }}</a>
                 </li>
                 {% endfor %}
@@ -130,6 +131,7 @@
                 <a href="#intro" id="totop" class="btn btn-circle">
                   <i class="fa fa-angle-double-up animated"></i>
                 </a>
+                <p>Made by sht in 2016.7</p>
               </div>
             </div>
           </div>
@@ -145,7 +147,7 @@
     <script src="/static/js/wow.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="/static/js/custom.js"></script>
-
+    <script src="//cdn.bootcss.com/jquery.tocify/1.9.0/javascripts/jquery.tocify.js"></script>
   </body>
 
 </html>

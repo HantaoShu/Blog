@@ -32,7 +32,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="/blog">
+          <a class="navbar-brand" href="/">
             <h1>forthedream.com.cn</h1>
           </a>
         </div>
@@ -40,7 +40,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/blog">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="#contact">made by sht</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">blog <b class="caret"></b></a>
@@ -56,8 +56,7 @@
     </nav>
 
     <!-- Section: intro -->
-    <section id="intro" class="intro">
-
+    <section id="spec" class="intro">
       <div class="slogan">
         <h2>for the dream <span class="text_color">from today</span> </h2>
         <div class="text-right">
@@ -65,14 +64,14 @@
         </div>
       </div>
       <div class="page-scroll">
-        <a href="#service" class="btn btn-circle">
+        <a href="#maintain" class="btn btn-circle">
           <i class="fa fa-angle-double-down animated"></i>
         </a>
       </div>
     </section>
     <!-- /Section: intro -->
 
-    <section id="about" class="home-section text-left">
+    <section id="maintain" class="home-section text-left">
       <div class="heading-about">
         <div class="container">
           <div class="row">
@@ -91,7 +90,6 @@
           <div class="col-md-11">
             <div class="wow bounceInUp" data-wow-delay="0.2s">
               <h2>{{ spec.title }}</h2>
-              <p>{{ spec.id }}</p>
               <h3>{{ spec.abstract }}
                 <hr>
                 {% autoescape off %}
@@ -109,9 +107,10 @@
           <div class="col-md-12 col-lg-12">
             <div class="wow shake" data-wow-delay="0.4s">
               <div class="page-scroll marginbot-30">
-                <a href="#intro" id="totop" class="btn btn-circle">
+                <a href="#spec" id="totop" class="btn btn-circle">
                   <i class="fa fa-angle-double-up animated"></i>
                 </a>
+                <p>Made by sht in 2016.7</p>
               </div>
             </div>
           </div>

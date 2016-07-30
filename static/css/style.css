@@ -304,7 +304,6 @@ hr {
 .intro {
 	width:100%;
 	position:relative;
-	hight:30%;
 	background: url(../img/bg1.jpg) no-repeat top center;
 }
 
@@ -312,6 +311,10 @@ hr {
 	padding:20% 0 0 0;
 }
 
+#spec {
+    padding:8% 0 0 0 ;
+    height:45%
+}
 .intro .slogan {
 	text-align: center;
 
