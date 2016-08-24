@@ -161,7 +161,23 @@ a:focus {
     outline: 0;
 }
 
+/*blog maintain*/
+.blog_maintain h2{
+  font-size: 24px;
+}
+.blog_maintain h1{
+  font-size: 28px;
+}
 
+.blog_maintain h3{
+  font-size: 20px;
+}
+.blog_maintain h4{
+  font-size: 18px;
+}
+.blog_maintain h5{
+  font-size: 16px;
+}
 /* loader */
 #preloader {
     background: #ffffff;

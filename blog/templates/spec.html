@@ -11,13 +11,14 @@
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
+
     <!-- Fonts -->
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/static/css/animate.css" rel="stylesheet" />
     <!-- Squad theme CSS -->
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link href="/static/color/default.css" rel="stylesheet">
-
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/color/default.css" rel="stylesheet" type=”text/css">
+    <link type="text/css" rel="stylesheet" href="/static/css/jquery.tocify.css" />
   </head>
 
   <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -91,14 +92,60 @@
             <div class="wow bounceInUp" data-wow-delay="0.2s">
               <h2>{{ spec.title }}</h2>
               <h3>{{ spec.abstract }}
-                <hr>
-                {% autoescape off %}
-                {{ spec.maintain }}
-                {% endautoescape %}
+            </div>
+            <hr>
+            <div class ="blog_maintain hero-unit">
+              {% autoescape off %}
+              {{ spec.maintain }}
+              {% endautoescape %}
+            </div>
+            <hr>
+            <h2>评论</h2>
+            {% if not comment  %}
+            <p>暂无评论</p>
+            {% else %}
+            <p>共{{ cmlen }}条评论</p>
+            {% for cm in comment %}
+            <p>{{ cm.maintain }}<p>
+            <p align="right">用户名:{{ cm.author }}</p>
+            <p align="right">{{ cm.timestamp}}</p>
+            <hr>
+            {% endfor %}
+            {% endif %}
+            <hr>
+            <h2>提交评论</h2>
+            <form class="form-horizontal" action="/comment/" method='post' id="cmForm" >
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="blogId" class="col-md-1 control-label">博客编号</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="blogId" value="{{ bid }}" readonly>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="author" class="col-md-1 control-label">用户名</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="author" placeholder="用户名">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="maintain" class="col-md-1 control-label">评论</label>
+                <div class="col-md-8">
+                  <textarea  class="form-control" rows="5" name="maintain" placeholder="说点什么吧"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-offset-8 col-md-10">
+                  <button type="submit"  class="btn ds-post-button btn-success">提交</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-1">
+            <div id="toc">
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <footer>
@@ -111,6 +158,7 @@
                   <i class="fa fa-angle-double-up animated"></i>
                 </a>
                 <p>Made by sht in 2016.7</p>
+                <p>ICP主体备案号:蜀ICP备16021061号</p>
               </div>
             </div>
           </div>
@@ -124,9 +172,21 @@
     <script src="/static/js/jquery.easing.min.js"></script>	
     <script src="/static/js/jquery.scrollTo.js"></script>
     <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/jquery-1.7.2.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="/static/js/jquery.tocify.min.js""></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="/static/js/custom.js"></script>
-
+    <script>
+$(function() {
+  var toc = $("#toc").tocify({
+    selectors: "h2,h3,h4,h5"
+  }).data("toc-tocify");
+  prettyPrint();
+  $(".optionName").popover({ trigger: "hover" });
+});
+    </script>
   </body>
 
 </html>
