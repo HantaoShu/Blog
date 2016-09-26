@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>2048</title>
+
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/yx/css/main.css">
+	<script type="text/javascript" src="static/yx/js/my2048.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+
+<body background="static/yx/image/background.jpg">
+	<div class="container">
+		<div class="heading text-center">
+			<h1 class="title">2048</h1>
+			<div id = "score-container">0</div>
+		</div>
+
+		<div class="game-info text-center">
+			<button type="button" class="btn btn-info btn-lg" onclick="init();">开始</button>
+		</div>
+
+		<div class="game-container">
+			<div class="grid-container" id="box-main">
+				<div class="grid-row">
+					<div class="grid-cell" id="box0"></div>
+					<div class="grid-cell" id="box1"></div>
+					<div class="grid-cell" id="box2"></div>
+					<div class="grid-cell" id="box3"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell" id="box4"></div>
+					<div class="grid-cell" id="box5"></div>
+					<div class="grid-cell" id="box6"></div>
+					<div class="grid-cell" id="box7"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell" id="box8"></div>
+					<div class="grid-cell" id="box9"></div>
+					<div class="grid-cell" id="box10"></div>
+					<div class="grid-cell" id="box11"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell" id="box12"></div>
+					<div class="grid-cell" id="box13"></div>
+					<div class="grid-cell" id="box14"></div>
+					<div class="grid-cell" id="box15"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

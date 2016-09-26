@@ -22,8 +22,12 @@ urlpatterns =[
     url(r'^$',blog_view.index),
     url(r'^tem/$',blog_view.tem),
     url(r'^comment/$',blog_view.comment),
+    url(r'^yx$',blog_view.yx),
 ]
 # admin
 urlpatterns+=[
     url(r'^admin/', admin.site.urls),
+]
+urlpatterns+=[
+    url(r'^.*/$',blog_view.error),
 ]
