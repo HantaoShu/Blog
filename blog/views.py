@@ -26,6 +26,11 @@ def spec(request,bid):
 def tem(request):
     return render_to_response('tem.html')
 
+def error(request):
+    return render_to_response('error.html')
+def yx(request):
+    return render_to_response('2048.html')
+
 def comment(request):
     
     if(request.method == 'POST'):

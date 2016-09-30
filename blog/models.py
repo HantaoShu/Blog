@@ -15,7 +15,7 @@ class BlogsPost(models.Model):
 
 class Comment(models.Model):
     maintain = models.TextField()
-    author = models.CharField(max_length = 30,default='匿名用户')
+    author = models.CharField(max_length = 30,default='Guest')
     timestamp = models.DateTimeField(auto_now_add=True)
     blogId = models.IntegerField()
 
@@ -26,9 +26,9 @@ class CommentForm(ModelForm):
         fields=('blogId','author','maintain')
 
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('title','abstract','timestamp')
+    list_display = ('id','title','abstract','timestamp')
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('author','timestamp','blogId','maintain')
+    list_display = ('id','author','timestamp','blogId','maintain')
 admin.site.register(BlogsPost,BlogPostAdmin)
 admin.site.register(Comment,CommentAdmin)
