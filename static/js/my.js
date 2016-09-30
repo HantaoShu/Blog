@@ -22,7 +22,6 @@ function form_validate(){
       userdiv.setAttribute("class","has-success");
     }
     usererror.innerHTML="";
-    flag = 0
   }
   var cmdir= document.getElementById("cmdiv");
   var cmerror = document.getElementById("cmerror");
@@ -34,6 +33,7 @@ function form_validate(){
       cmdir.setAttribute("class","has-error");
     }
     cmerror.innerHTML="请输入评论";
+    flag=0;
   }
   else{
     if(document.all){
